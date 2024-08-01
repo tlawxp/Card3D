@@ -1,0 +1,239 @@
+/*
+====================================================
+[ FONT ]
+====================================================
+ */
+@font-face {
+    font-family: Poppins;
+    src: url("font/Poppins-Medium.ttf");
+}
+/*
+====================================================
+[ RESET CSS ]
+====================================================
+ */
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    text-align: center;
+    align-items: center;
+    background: #4e54c8; 
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+    font-family: Poppins;
+}
+/*
+====================================================
+[ USER CARD 3D ]
+====================================================
+ */
+.box {
+    position: fixed;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 500px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    box-sizing: border-box;
+    z-index: 99999;
+}
+.box .boxdepan,.box .boxbelakang {
+    position: absolute;
+    backface-visibility: hidden;
+    transition: 0.8s;
+    width: 350px;
+    height: 500px;
+    border-radius: 10px;
+    background-color: #0e111a;
+    color: #fff;
+    padding: 20px;
+    /*box-shadow: 10px 10px 10px rgba(0,0,0,.7);*/
+    box-sizing: border-box;
+}
+.box .boxdepan img {
+    width: 200px;
+    border-radius: 50%;
+}
+.box .boxdepan h1 {
+    font-size: 1.8em;
+    margin: 15px;
+}
+.box .boxdepan h2 {
+    margin: 15px;
+    font-size: 1.5em;
+}
+.box .boxdepan p {
+    margin: 10px;
+    font-size: 1em;
+}
+.box .boxdepan .skill {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5em;
+}
+.box .boxbelakang {
+    transform: rotateY(180deg);
+}
+.box:hover .boxbelakang {
+    transform: rotateY(0deg);
+}
+.box:hover .boxdepan {
+    transform: rotateY(-180deg);
+}
+.box li {
+    width: 100%;
+    margin-top: 30px;
+    list-style: none;
+}
+.box a {
+    text-decoration: none;
+    display: inline-block;
+    color: #000;
+    font-size: 1em;
+    width: 90%;
+    padding: 10px;
+    background: SpringGreen;
+    border-radius: 10px;
+    /*box-shadow: -5px -5px 10px rgb(0, 250, 154),
+                5px 5px 10px rgb(0, 250, 154);*/
+    transition: 0.8s;
+    font-family: Poppins;
+}
+/*.box a:hover {
+    box-shadow: inset -5px -5px 10px rgb(0, 250, 154), 
+                inset 5px 5px 10px rgb(0, 250, 154);
+}*/
+.box i {
+    margin-right: 5px;
+}
+.box svg {
+    width: 50px;
+    height: 50px;
+    fill: #fff;
+}
+/*
+====================================================
+[ ANIMATE BACKGROUND ]
+====================================================
+ */
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
